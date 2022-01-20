@@ -1,0 +1,9 @@
+.item {
+    height: 82px;
+    width: 64px;
+    background: url(../../assets/img/toothbrush.png) no-repeat;
+    background-size: cover;    
+}
+.item:hover {
+    cursor: pointer;
+}
