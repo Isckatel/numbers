@@ -31,7 +31,7 @@ class App extends React.Component {
     let x = 525;
     let y = 225;
     let width = 50
-    let height = 10;
+    let height = 100;
     
     return (
       <div className="App">
