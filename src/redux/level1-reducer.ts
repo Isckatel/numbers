@@ -32,6 +32,8 @@ const level1Reducer = (state = initialState, action: ActionTypes) => {
                     if (item.id==action.id) return {...item, visibility: false}
                 })
             }
+        default:
+            return state;
     }
 };
 

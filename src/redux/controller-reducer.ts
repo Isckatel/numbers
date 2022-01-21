@@ -18,6 +18,8 @@ const controllerReducer = (state = initialState, action: ActionTypes) => {
                 ...state,
                 currentLevel: action.level                
             }
+            default:
+                return state;
     }
 };
 
