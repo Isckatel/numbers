@@ -24,7 +24,13 @@ let initialState = {
             id:0,
             visibility: true, 
             deltaPosition: { x: 0, y: 0 }
+        },
+        {
+            id:1,
+            visibility: true, 
+            deltaPosition: { x: 0, y: 0 }
         }
+
     ]
 }
 

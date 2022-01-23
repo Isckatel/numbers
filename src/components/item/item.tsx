@@ -26,7 +26,7 @@ class Unit {
   }
  
 
-class Item extends React.Component<IPosition> {
+class Item extends React.Component {
     state = {
         activeDrags: 0,
         deltaPosition: {
@@ -51,11 +51,11 @@ class Item extends React.Component<IPosition> {
         y: y + ui.deltaY,
         }    
     });
-    let Person = new Unit(this.props.positionX, this.props.positionY, this.props.widthObj, this.props.heightObj);
-    let ThisObj = new Unit(this.state.deltaPosition.x, this.state.deltaPosition.y, 64, 82);
-    if (this.collision(Person, ThisObj)) {
-      //Изменить стейт наличия
-    }
+    // let Person = new Unit(this.props.positionX, this.props.positionY, this.props.widthObj, this.props.heightObj);
+    // let ThisObj = new Unit(this.state.deltaPosition.x, this.state.deltaPosition.y, 64, 82);
+    // if (this.collision(Person, ThisObj)) {
+    //   //Изменить стейт наличия
+    // }
 
     };
 
