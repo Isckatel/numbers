@@ -1,5 +1,8 @@
+import collision from "../assets/functions/collision";
+
 const SET_VISIBILITY_ITEM="SET_VISIBILITY_ITEM";
 const SET_DELTA_POSITION = "SET_DELTA_POSITION";
+const SET_DELTA_POSITION_AND_VISIBILITY = "SET_DELTA_POSITION_AND_VISIBILITY";
 
  type deltaPositionType = {x:number, y:number};
  export type itemType = {
@@ -21,6 +24,9 @@ export const setVisibilityItem = (id:number) => (
 );
 export const setDeltaPosition = (id:number, deltaPosition:deltaPositionType) => (
     {type:SET_DELTA_POSITION, id, deltaPosition}
+);
+export const setDeltaPositionAndVisibility = (id:number, deltaPosition:deltaPositionType) => (
+    {type:SET_DELTA_POSITION_AND_VISIBILITY, id, deltaPosition}
 );
 
 type ActionTypes = ReturnType<typeof setVisibilityItem>;
@@ -73,6 +79,21 @@ const level1Reducer = (state = initialState, action: any) => {
                     }
                 })
             }
+        case SET_DELTA_POSITION_AND_VISIBILITY:
+            return {
+                ...state,
+                items: state.items.map((item:any) => {
+                    if (item.id==action.id) {
+                        if (collision(item,state.person)) {
+                            return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}, visibility: false}
+                        } else {
+                            return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}}
+                        }    
+                    } else {
+                        return {...item}
+                    }
+                })
+            }    
         default:
             return state;
     }

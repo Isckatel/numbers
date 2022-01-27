@@ -9,6 +9,10 @@ interface IPosition {
     heightObj: number
 }
 
+interface IItem {
+  id: number
+}
+
 // class Unit {
 //     // imgUrl:string;
 //     x:number;
@@ -33,15 +37,6 @@ class Item extends React.Component {
           x: 0, y: 0
         }
       };
-
-    // collision = (objA:Unit, objB:Unit) : boolean => {
-    //     if (objA.x+objA.width  > objB.x
-    //       && objA.x < objB.x+objB.width
-    //       && objA.y+objA.height > objB.y
-    //       && objA.y < objB.y+objB.height) {
-    //             return true;
-    //     } else {return false;}
-    //   }  
 
     handleDrag = (e, ui) => {
     const { x, y } = this.state.deltaPosition;
