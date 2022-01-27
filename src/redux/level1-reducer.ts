@@ -1,7 +1,20 @@
 const SET_VISIBILITY_ITEM="SET_VISIBILITY_ITEM";
 const SET_DELTA_POSITION = "SET_DELTA_POSITION";
 
-type deltaPositionType = {x:number, y:number};
+ type deltaPositionType = {x:number, y:number};
+ export type itemType = {
+    id:number,
+    visibility: boolean,
+    deltaPosition: deltaPositionType,
+    width: number,
+    height: number   
+}
+
+export type personType = {
+    position: deltaPositionType,
+    width: number,
+    height: number   
+}
 
 export const setVisibilityItem = (id:number) => (
     {type:SET_VISIBILITY_ITEM, id}
@@ -14,8 +27,7 @@ type ActionTypes = ReturnType<typeof setVisibilityItem>;
 
 let initialState = {
     person: {
-        positionX: 525,
-        positionY: 225,
+        position: {x:525, y:225}, 
         width: 50,
         height: 100
     },
@@ -23,12 +35,17 @@ let initialState = {
         {
             id:0,
             visibility: true, 
-            deltaPosition: { x: 0, y: 0 }
+            deltaPosition: { x: 0, y: 0 },
+            width: 64,
+            height: 82,
+            
         },
         {
             id:1,
             visibility: true, 
-            deltaPosition: { x: 0, y: 0 }
+            deltaPosition: { x: 0, y: 0 },
+            height: 82,
+            width: 64,
         }
 
     ]

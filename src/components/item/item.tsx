@@ -9,21 +9,21 @@ interface IPosition {
     heightObj: number
 }
 
-class Unit {
-    // imgUrl:string;
-    x:number;
-    y:number; 
-    width:number;
-    height:number;
-    // constructor(imgUrl, x = -16, y = -16, width = 16, height=16) {      
-    constructor(imgUrl, x = -16, y = -16, width = 16, height=16) {   
-      // this.imgUrl = imgUrl;
-      this.width = width;
-      this.height = width;
-      this.x = x;
-      this.y = y;
-    }
-  }
+// class Unit {
+//     // imgUrl:string;
+//     x:number;
+//     y:number; 
+//     width:number;
+//     height:number;
+//     // constructor(imgUrl, x = -16, y = -16, width = 16, height=16) {      
+//     constructor(imgUrl, x = -16, y = -16, width = 16, height=16) {   
+//       // this.imgUrl = imgUrl;
+//       this.width = width;
+//       this.height = width;
+//       this.x = x;
+//       this.y = y;
+//     }
+//   }
  
 
 class Item extends React.Component {
@@ -34,14 +34,14 @@ class Item extends React.Component {
         }
       };
 
-    collision = (objA:Unit, objB:Unit) : boolean => {
-        if (objA.x+objA.width  > objB.x
-          && objA.x < objB.x+objB.width
-          && objA.y+objA.height > objB.y
-          && objA.y < objB.y+objB.height) {
-                return true;
-        } else {return false;}
-      }  
+    // collision = (objA:Unit, objB:Unit) : boolean => {
+    //     if (objA.x+objA.width  > objB.x
+    //       && objA.x < objB.x+objB.width
+    //       && objA.y+objA.height > objB.y
+    //       && objA.y < objB.y+objB.height) {
+    //             return true;
+    //     } else {return false;}
+    //   }  
 
     handleDrag = (e, ui) => {
     const { x, y } = this.state.deltaPosition;
