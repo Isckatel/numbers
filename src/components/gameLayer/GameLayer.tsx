@@ -5,17 +5,17 @@ import { PropsStateType } from './GameLayerContainer';
 import {itemType, personType} from "../../redux/level1-reducer";
 
 class GameLayer extends React.Component<any> {
-    state = {
-        activeDrags: 0,
-        deltaPosition: {
-          x: 0, y: 0
-        },
-        controlledPosition: {
-          x: -400, y: 200
-        }
-      };
+    // state = {
+    //     activeDrags: 0,
+    //     deltaPosition: {
+    //       x: 0, y: 0
+    //     },
+    //     controlledPosition: {
+    //       x: -400, y: 200
+    //     }
+    //   };
     
-      elementRef = React.createRef();
+    elementRef = React.createRef();
 
     collision = (objA:itemType, objB:personType) : boolean => {
       if (objA.deltaPosition.x+objA.width  > objB.position.x
@@ -27,7 +27,8 @@ class GameLayer extends React.Component<any> {
     }    
 
     handleDrag: DraggableEventHandler = (e, ui) => {
-        const {x, y} = this.state.deltaPosition;
+        // const {x, y} = this.state.deltaPosition;
+        const {x, y} = this.props.state.level1.items[0].deltaPosition;
         this.setState({
           deltaPosition: {
             x: x + ui.deltaX,
@@ -37,10 +38,10 @@ class GameLayer extends React.Component<any> {
        let newX = x + ui.deltaX;
        let newY = y + ui.deltaY;
        this.props.setDeltaPosition(0,{x:newX,y:newY});       
-       console.log("x:" + newX + " " + "y:" + newY );
+      //  console.log("x:" + newX + " " + "y:" + newY );
        if (this.collision(this.props.state.level1.items[0], this.props.state.level1.person)) {
           this.props.setVisibilityItem(0);
-          console.log("setVisible()");
+          // console.log("setVisible()");
        } 
     };
 
