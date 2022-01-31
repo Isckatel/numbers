@@ -10,7 +10,8 @@ interface IPosition {
 }
 
 interface IItem {
-  id: number
+  id: number,
+  
 }
 
 // class Unit {
@@ -59,7 +60,7 @@ class Item extends React.Component {
         return (
         <Draggable onDrag={this.handleDrag}>    
             <div className='item'>
-                <div>x: {deltaPosition.x.toFixed(0)}, y: {deltaPosition.y.toFixed(0)}</div>
+                <div>id: , x: {deltaPosition.x.toFixed(0)}, y: {deltaPosition.y.toFixed(0)}</div>
             </div>
         </Draggable>
         );

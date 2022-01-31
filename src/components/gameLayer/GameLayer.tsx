@@ -1,6 +1,6 @@
 import React from 'react';
 import Draggable, {DraggableEventHandler} from 'react-draggable';
-import Item from '../item/item';
+import ItemContainer from '../item/itemContainer';
 import { PropsStateType } from './GameLayerContainer';
 import {itemType, personType} from "../../redux/level1-reducer";
 
@@ -47,11 +47,12 @@ class GameLayer extends React.Component<any> {
 
     
   
-    
+
     render() {
+      let ownProps = {idItem:0}
         return (
             <div>
-                <Item/>
+              <ItemContainer idItem={0} />
           {this.props.state.level1.items[0].visibility?<Draggable
             defaultPosition={{x: 0, y: 0}}
             scale={1}          

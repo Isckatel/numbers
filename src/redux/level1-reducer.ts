@@ -19,6 +19,7 @@ export type personType = {
     height: number   
 }
 
+//export type StateType = ReturnType<typeof store.getState>;
 export const setVisibilityItem = (id:number) => (
     {type:SET_VISIBILITY_ITEM, id}
 );
@@ -28,6 +29,7 @@ export const setDeltaPosition = (id:number, deltaPosition:deltaPositionType) => 
 export const setDeltaPositionAndVisibility = (id:number, deltaPosition:deltaPositionType) => (
     {type:SET_DELTA_POSITION_AND_VISIBILITY, id, deltaPosition}
 );
+
 
 type ActionTypes = ReturnType<typeof setVisibilityItem>;
 
