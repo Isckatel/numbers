@@ -43,16 +43,20 @@ class GameLayer extends React.Component<any> {
           this.props.setVisibilityItem(0);
           // console.log("setVisible()");
        } 
-    };
-
-    
+    };   
   
 
     render() {
-      let ownProps = {idItem:0}
+      let itemElem = this.props.state.level1.items.map((it)=>{
+        if (it.visibility) {
+          return (<ItemContainer key={it.id} idItem={it.id} />)
+        } else {
+          return null;
+        }  
+      });
         return (
             <div>
-              <ItemContainer idItem={0} />
+            {itemElem}
           {this.props.state.level1.items[0].visibility?<Draggable
             defaultPosition={{x: 0, y: 0}}
             scale={1}          

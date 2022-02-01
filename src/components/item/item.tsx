@@ -1,6 +1,7 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import "./item.css";
+import { PropsStateType } from './itemContainer';
 
 interface IPosition {
     positionX:number,
@@ -31,7 +32,7 @@ interface IItem {
 //   }
  
 
-class Item extends React.Component {
+class Item extends React.Component<PropsStateType> {
     state = {
         activeDrags: 0,
         deltaPosition: {
@@ -60,7 +61,7 @@ class Item extends React.Component {
         return (
         <Draggable onDrag={this.handleDrag}>    
             <div className='item'>
-                <div>id: , x: {deltaPosition.x.toFixed(0)}, y: {deltaPosition.y.toFixed(0)}</div>
+                <div>id:{this.props.idItem} , x: {deltaPosition.x.toFixed(0)}, y: {deltaPosition.y.toFixed(0)}</div>
             </div>
         </Draggable>
         );
