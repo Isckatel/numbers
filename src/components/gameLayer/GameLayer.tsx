@@ -3,6 +3,7 @@ import Draggable, {DraggableEventHandler} from 'react-draggable';
 import ItemContainer from '../item/itemContainer';
 import { PropsStateType } from './GameLayerContainer';
 import {itemType, personType} from "../../redux/level1-reducer";
+import "./GameLayer.css";
 
 class GameLayer extends React.Component<any> {
     // state = {
@@ -14,9 +15,12 @@ class GameLayer extends React.Component<any> {
     //       x: -400, y: 200
     //     }
     //   };
+    elementRef; 
+    constructor(props) {
+      super(props);
+      this.elementRef = React.createRef();
+    }
     
-    elementRef = React.createRef();
-
     collision = (objA:itemType, objB:personType) : boolean => {
       if (objA.deltaPosition.x+objA.width  > objB.position.x
         && objA.deltaPosition.x < objB.position.x+objB.width
@@ -45,18 +49,23 @@ class GameLayer extends React.Component<any> {
        } 
     };   
   
+  componentDidMount(): void {
+      
+  }    
+  
+  render() {
+    let itemElem = this.props.state.level1.items.map((it)=>{
+      if (it.visibility) {
+        return (<ItemContainer key={it.id} idItem={it.id} />)
+      } else {
+        return null;
+      }  
+    });
 
-    render() {
-      let itemElem = this.props.state.level1.items.map((it)=>{
-        if (it.visibility) {
-          return (<ItemContainer key={it.id} idItem={it.id} />)
-        } else {
-          return null;
-        }  
-      });
-        return (
-            <div>
-            {itemElem}
+    return (
+      <div className="WraperGameLayer">
+        <div className="GameLayer">
+          {itemElem}
           {this.props.state.level1.items[0].visibility?<Draggable
             defaultPosition={{x: 0, y: 0}}
             scale={1}          
@@ -76,12 +85,17 @@ class GameLayer extends React.Component<any> {
               </p>
             </div>
           </Draggable>
-          <div>
-            <img ref='elementRef' className='person' src="/assets/img/maleAdventurer.png" />
-          </div>
-            </div>
-        );
-    }
+
+          <img ref={this.elementRef}
+           className='person'
+          //  style={{ top: this.props.level1.person.position.x, left:this.props.level1.person.position.y }} 
+          style={{ top:50}}
+           src="/assets/img/maleAdventurer.png" />
+
+        </div>
+      </div>    
+    );
+  }
 }
 
 export default GameLayer;
