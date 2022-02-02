@@ -5,7 +5,7 @@
 /assets
 /.pnp
 .pnp.js
-
+tasks.txt
 # testing
 /coverage
 

@@ -11,6 +11,10 @@
 }
 
 .person {
-    height: 200px;
     position: absolute;
+    width: 125px;
+    height: 200px;
+    background: url(../../assets/img/maleAdventurer.png) no-repeat;
+    background-size: cover;  
+    z-index: 200;     
   }
