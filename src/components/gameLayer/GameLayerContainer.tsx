@@ -2,14 +2,14 @@ import React from "react";
 import { StateType } from "../../redux/store";
 import {connect, ConnectedProps} from 'react-redux';
 import GameLayer from "./GameLayer";
-import {setDeltaPosition, setVisibilityItem} from "../../redux/level1-reducer";
+import {setDeltaPosition, setVisibilityItem, setDeltaPositionAndVisibility} from "../../redux/level1-reducer";
 
 
 let mapStateToProps:any = (state:StateType) => ({
     state: state
 });
 
-const connector = connect(mapStateToProps, {setDeltaPosition, setVisibilityItem});
+const connector = connect(mapStateToProps, {setDeltaPosition, setVisibilityItem, setDeltaPositionAndVisibility});
 export type PropsStateType = ConnectedProps<typeof connector>
 
 class GameLayerContainer extends React.Component<StateType> {
@@ -20,4 +20,4 @@ class GameLayerContainer extends React.Component<StateType> {
     }
 }
 
-export default connect(mapStateToProps, {setDeltaPosition, setVisibilityItem})(GameLayerContainer);
+export default connect(mapStateToProps, {setDeltaPosition, setVisibilityItem, setDeltaPositionAndVisibility})(GameLayerContainer);
