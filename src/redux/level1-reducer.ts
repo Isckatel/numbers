@@ -35,7 +35,7 @@ type ActionTypes = ReturnType<typeof setVisibilityItem>;
 
 let initialState = {
     person: {
-        position: {x:300, y:400}, 
+        position: {x:400, y:300}, 
         width: 125,
         height: 200
     },

@@ -1,0 +1,20 @@
+.selsectNumber {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.elemSelect {
+    flex-grow: 1;
+    flex-basis: 25%;
+    height: 100px;
+    min-width: 180px;
+    max-width: 266px;  
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 2px solid rgba(9, 185, 82, 0.527);
+    text-align: center;
+    font-size: 32px;
+    color: cadetblue;
+    text-decoration: none;
+}

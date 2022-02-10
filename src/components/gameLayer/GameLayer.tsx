@@ -24,7 +24,8 @@ class GameLayer extends React.Component<any> {
           {itemElem}   
           <div ref={this.elementRef}
            className='person'          
-           style={{ top:this.props.state.level1.person.position.x, left:this.props.state.level1.person.position.y}}>
+           style={{ top:this.props.state.level1.person.position.y, left:this.props.state.level1.person.position.x}}>
+             <div> top: {this.props.state.level1.person.position.y}, left: {this.props.state.level1.person.position.x}</div>
           </div>
         </div>
       </div>    
