@@ -1,6 +1,7 @@
 import React from 'react';
 import ItemContainer from '../item/itemContainer';
 import "./GameLayer.css";
+import DisplayGame from "../DisplayGame/DisplayGame";
 
 class GameLayer extends React.Component<any> {
   elementRef; 
@@ -27,7 +28,7 @@ class GameLayer extends React.Component<any> {
            style={{ top:this.props.state.level1.person.position.y, left:this.props.state.level1.person.position.x}}>
              <div> top: {this.props.state.level1.person.position.y}, left: {this.props.state.level1.person.position.x}</div>
           </div>
-        </div>
+        </div>        
       </div>    
     );
   }

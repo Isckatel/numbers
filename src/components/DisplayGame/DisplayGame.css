@@ -1,0 +1,11 @@
+.WraperDisplayGame {
+    display: flex;
+    justify-content: center;
+}
+
+.DisplayGame {
+    border: 2px solid rgba(9, 185, 82, 0.527);
+    width: 960px;
+    height: 540px;
+    position: relative; 
+}
