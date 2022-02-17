@@ -6,6 +6,8 @@ import GameLayerContainer from './components/gameLayer/GameLayerContainer';
 import SelectNumber from './components/SelectNumber/SelectNumber';
 import {Route, Routes, NavLink} from "react-router-dom";
 import DisplayGame from './components/DisplayGame/DisplayGame';
+import SayNumber from './components/SayNumber/SayNumber';
+
 class App extends React.Component {  
   render(){    
     return (
@@ -18,6 +20,7 @@ class App extends React.Component {
           <Route path="/" element={<SelectNumber />} />
           <Route path="/number1" element={<GameLayerContainer controller={undefined} level1={undefined} />} />           
           <Route path="/number2" element={<DisplayGame />} />
+          <Route path="/number3" element={<SayNumber />} />
         </Routes>  
         </main>
       </div>
