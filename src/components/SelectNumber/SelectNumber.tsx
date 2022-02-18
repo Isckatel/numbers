@@ -15,8 +15,9 @@ class SelectNumber extends React.Component {
                 <NavLink to="/number7"> <div className="elemSelect">7</div></NavLink>
                 <NavLink to="/number8"> <div className="elemSelect">8</div></NavLink>
                 <NavLink to="/number9"> <div className="elemSelect">9</div></NavLink>
-                <NavLink to="/number10"><div className="elemSelect">10</div></NavLink>
+                <NavLink to="/number10"><div className="elemSelect">10</div></NavLink>                
             </div>
+            
         );
     }
 }
