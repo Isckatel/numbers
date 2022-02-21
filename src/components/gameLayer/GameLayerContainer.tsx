@@ -12,12 +12,15 @@ let mapStateToProps:any = (state:StateType) => ({
 const connector = connect(mapStateToProps, {setDeltaPosition, setVisibilityItem, setDeltaPositionAndVisibility});
 export type PropsStateType = ConnectedProps<typeof connector>
 
-class GameLayerContainer extends React.Component<StateType> {
-    render() {
-        return (
-            <GameLayer {...this.props} />
-        );
-    }
+// class GameLayerContainer extends React.Component<StateType> {
+//  render() { return (<GameLayer {...this.props} />); }
+// }
+
+const GameLayerContainer: React.FC<StateType> = (props:any) => {
+    return (
+        <GameLayer {...props } />
+    );
+   
 }
 
 export default connect(mapStateToProps, {setDeltaPosition, setVisibilityItem, setDeltaPositionAndVisibility})(GameLayerContainer);
