@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/assets
+/public/assets
 /.pnp
 .pnp.js
 tasks.txt
