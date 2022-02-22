@@ -20,42 +20,69 @@ export type personType = {
 }
 
 //export type StateType = ReturnType<typeof store.getState>;
-export const setVisibilityItem = (id:number) => (
-    {type:SET_VISIBILITY_ITEM, id}
+export const setVisibilityItem = (id:number, idNumber:number) => (
+    {type:SET_VISIBILITY_ITEM, id, idNumber}
 );
-export const setDeltaPosition = (id:number, deltaPosition:deltaPositionType) => (
-    {type:SET_DELTA_POSITION, id, deltaPosition}
+export const setDeltaPosition = (id:number, deltaPosition:deltaPositionType, idNumber:number) => (
+    {type:SET_DELTA_POSITION, id, deltaPosition, idNumber}
 );
-export const setDeltaPositionAndVisibility = (id:number, deltaPosition:deltaPositionType) => (
-    {type:SET_DELTA_POSITION_AND_VISIBILITY, id, deltaPosition}
+export const setDeltaPositionAndVisibility = (id:number, deltaPosition:deltaPositionType, idNumber:number) => (
+    {type:SET_DELTA_POSITION_AND_VISIBILITY, id, deltaPosition, idNumber}
 );
 
 
 type ActionTypes = ReturnType<typeof setVisibilityItem>;
 
 let initialState = {
-    person: {
-        position: {x:400, y:300}, 
-        width: 125,
-        height: 200
-    },
-    items: [
+    numbers: [
         {
-            id:0,
-            visibility: true, 
-            deltaPosition: { x: 0, y: 0 },
-            width: 64,
-            height: 82,
-            
+        id:1,
+        person: {
+            position: {x:400, y:300}, 
+            width: 125,
+            height: 200,
+            urlImg: ''
+        },
+        items: [
+            {
+                id:0,
+                visibility: true, 
+                deltaPosition: { x: 0, y: 0 },
+                width: 64,
+                height: 82,
+                urlImg: ''
+            }
+        ]
         },
         {
-            id:1,
-            visibility: true, 
-            deltaPosition: { x: 0, y: 0 },
-            height: 82,
-            width: 64,
-        }
-
+            id:2,
+            person: {
+                position: {x:400, y:300}, 
+                width: 125,
+                height: 200,
+                urlImg: ''
+            },
+            items: [
+                {
+                    id:0,
+                    visibility: true, 
+                    deltaPosition: { x: 0, y: 0 },
+                    width: 64,
+                    height: 82,
+                    urlImg: ''
+                    
+                },
+                {
+                    id:1,
+                    visibility: true, 
+                    deltaPosition: { x: 0, y: 0 },
+                    height: 82,
+                    width: 64,
+                    urlImg: ''
+                }
+    
+            ]
+        }        
     ]
 }
 
@@ -65,7 +92,7 @@ const level1Reducer = (state = initialState, action: any) => {
             return {
                 ...state,
                 //переделать
-                items: state.items.map((item:any) => {
+                items: state.numbers[action.idNumber].items.map((item:any) => {
                     if (item.id==action.id) {return {...item, visibility: false}} 
                     else {return {...item}}
                 })
@@ -73,7 +100,7 @@ const level1Reducer = (state = initialState, action: any) => {
         case SET_DELTA_POSITION:
             return {
                 ...state,
-                items: state.items.map((item:any) => {
+                items: state.numbers[action.idNumber].items.map((item:any) => {
                     if (item.id==action.id) {
                         return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}}
                     } else {
@@ -84,9 +111,9 @@ const level1Reducer = (state = initialState, action: any) => {
         case SET_DELTA_POSITION_AND_VISIBILITY:
             return {
                 ...state,
-                items: state.items.map((item:any) => {
+                items: state.numbers[action.idNumber].items.map((item:any) => {
                     if (item.id==action.id) {
-                        if (collision(item,state.person)) {
+                        if (collision(item,state.numbers[action.idNumber].person)) {
                             return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}, visibility: false}
                         } else {
                             return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}}

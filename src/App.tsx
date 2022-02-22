@@ -21,7 +21,9 @@ class App extends React.Component {
           <Route path="/" element={<MainDisplay />} >
             <Route path="" element={<SelectNumber />} />
             <Route path="number1" element={<GameLayerContainer controller={undefined} level1={undefined} />}/>          
-            <Route path="number2" element={<DisplayGame />} />
+            <Route path="number" element={<DisplayGame />} >
+              <Route path=":numberId" element={<DisplayGame />} />
+            </Route>  
             <Route path="number3" element={<SayNumber />} />
             <Route
               path="*"

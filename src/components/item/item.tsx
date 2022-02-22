@@ -17,14 +17,14 @@ import { PropsStateType } from './itemContainer';
 class Item extends React.Component<PropsStateType> {
     
     handleDrag: DraggableEventHandler = (e, ui) => {
-        const { x, y } = this.props.level1.items[this.props.idItem].deltaPosition;
+        const { x, y } = this.props.level1.numbers[this.props.idNumber].items[this.props.idItem].deltaPosition;
         let newX = x + ui.deltaX;
         let newY = y + ui.deltaY;
-        this.props.setDeltaPositionAndVisibility(this.props.idItem,{x:newX,y:newY});
+        this.props.setDeltaPositionAndVisibility(this.props.idItem,{x:newX,y:newY},this.props.idNumber);
     };
 
     render() {
-        const { deltaPosition } = this.props.level1.items[this.props.idItem];
+        const { deltaPosition } = this.props.level1.numbers[this.props.idNumber].items[this.props.idItem];
         return (
         <Draggable onDrag={this.handleDrag}>    
             <div className='item'>

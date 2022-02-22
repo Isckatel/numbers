@@ -6,11 +6,13 @@ import {setDeltaPositionAndVisibility} from "../../redux/level1-reducer";
 
 type OwnProps = {
     idItem: number,
+    idNumber:number;
   };
 
 let mapStateToProps = (state:StateType, ownProps: OwnProps) => ({
     level1: state.level1,
-    idItem: ownProps.idItem     
+    idItem: ownProps.idItem,
+    idNumber: ownProps.idNumber     
 });
 
 const connector = connect(mapStateToProps, {setDeltaPositionAndVisibility});

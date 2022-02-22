@@ -2,6 +2,7 @@ import React from 'react';
 import ItemContainer from '../item/itemContainer';
 import "./GameLayer.css";
 import DisplayGame from "../DisplayGame/DisplayGame";
+import { timeStamp } from 'console';
 
 class GameLayer extends React.Component<any> {
   elementRef; 
@@ -13,7 +14,7 @@ class GameLayer extends React.Component<any> {
   render() {
     let itemElem = this.props.state.level1.items.map((it)=>{
       if (it.visibility) {
-        return (<ItemContainer key={it.id} idItem={it.id} />)
+        return (<ItemContainer key={it.id} idItem={it.id} idNumber={this.props.idNumber} />)
       } else {
         return null;
       }  
