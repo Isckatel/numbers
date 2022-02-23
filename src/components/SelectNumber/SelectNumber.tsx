@@ -6,7 +6,7 @@ class SelectNumber extends React.Component {
     render() {
         return (
             <div className="selsectNumber">
-                <NavLink to="/number1"> <div className="elemSelect">1</div></NavLink>
+                <NavLink to="/number/1"> <div className="elemSelect">1</div></NavLink>
                 <NavLink to="/number/2"> <div className="elemSelect">2</div></NavLink>
                 <NavLink to="/number3"> <div className="elemSelect">3</div></NavLink>
                 <NavLink to="/number4"> <div className="elemSelect">4</div></NavLink>

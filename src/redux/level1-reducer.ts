@@ -92,7 +92,7 @@ const level1Reducer = (state = initialState, action: any) => {
             return {
                 ...state,
                 //переделать
-                items: state.numbers[action.idNumber].items.map((item:any) => {
+                items: state.numbers[action.idNumber-1].items.map((item:any) => {
                     if (item.id==action.id) {return {...item, visibility: false}} 
                     else {return {...item}}
                 })
@@ -100,7 +100,7 @@ const level1Reducer = (state = initialState, action: any) => {
         case SET_DELTA_POSITION:
             return {
                 ...state,
-                items: state.numbers[action.idNumber].items.map((item:any) => {
+                items: state.numbers[action.idNumber-1].items.map((item:any) => {
                     if (item.id==action.id) {
                         return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}}
                     } else {
@@ -111,9 +111,9 @@ const level1Reducer = (state = initialState, action: any) => {
         case SET_DELTA_POSITION_AND_VISIBILITY:
             return {
                 ...state,
-                items: state.numbers[action.idNumber].items.map((item:any) => {
+                items: state.numbers[action.idNumber-1].items.map((item:any) => {
                     if (item.id==action.id) {
-                        if (collision(item,state.numbers[action.idNumber].person)) {
+                        if (collision(item,state.numbers[action.idNumber-1].person)) {
                             return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}, visibility: false}
                         } else {
                             return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}}
