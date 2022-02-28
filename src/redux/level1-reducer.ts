@@ -82,6 +82,43 @@ let initialState = {
                 }
     
             ]
+        },
+        {
+            id:3,
+            person: {
+                position: {x:400, y:300}, 
+                width: 125,
+                height: 200,
+                urlImg: ''
+            },
+            items: [
+                {
+                    id:0,
+                    visibility: true, 
+                    deltaPosition: { x: 0, y: 0 },
+                    width: 64,
+                    height: 82,
+                    urlImg: ''
+                    
+                },
+                {
+                    id:1,
+                    visibility: true, 
+                    deltaPosition: { x: 0, y: 0 },
+                    height: 82,
+                    width: 64,
+                    urlImg: ''
+                },
+                {
+                    id:2,
+                    visibility: true, 
+                    deltaPosition: { x: 0, y: 0 },
+                    height: 82,
+                    width: 64,
+                    urlImg: ''
+                }
+    
+            ]
         }        
     ]
 }
