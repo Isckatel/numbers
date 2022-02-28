@@ -8,6 +8,7 @@ import {Route, Routes, NavLink} from "react-router-dom";
 import DisplayGame from './components/DisplayGame/DisplayGame';
 import SayNumber from './components/SayNumber/SayNumber';
 import MainDisplay from './components/MainDisplay/MainDisplay';
+import DisplayGameContainer from './components/DisplayGame/DisplayGameContainer';
 
 class App extends React.Component {  
   render(){    
@@ -21,8 +22,8 @@ class App extends React.Component {
           <Route path="/" element={<MainDisplay />} >
             <Route path="" element={<SelectNumber />} />
             {/* <Route path="number1" element={<GameLayerContainer controller={undefined} level1={undefined} />}/>           */}
-            <Route path="number" element={<DisplayGame />} >
-              <Route path=":numberId" element={<DisplayGame />} />
+            <Route path="number" element={<DisplayGameContainer />} >
+              <Route path=":numberId" element={<DisplayGameContainer />} />
             </Route>  
             <Route path="number4" element={<SayNumber />} />
             <Route

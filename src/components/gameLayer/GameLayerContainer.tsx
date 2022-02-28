@@ -14,7 +14,7 @@ let mapStateToProps:any = (state:StateType, ownProps:OwnProps) => ({
 });
 
 const connector = connect(mapStateToProps, {setDeltaPosition, setVisibilityItem, setDeltaPositionAndVisibility});
-export type PropsStateType = ConnectedProps<typeof connector> & ReturnType<typeof mapStateToProps>;
+export type PropsStateType = ConnectedProps<typeof connector>  & ReturnType<typeof mapStateToProps>;;
 
 // class GameLayerContainer extends React.Component<StateType> {
 //  render() { return (<GameLayer {...this.props} />); }
