@@ -2,7 +2,7 @@ import React from "react";
 import { StateType } from "../../redux/store";
 import {connect, ConnectedProps} from 'react-redux';
 import {setCurrentLevel, setCurrentNumber} from "../../redux/controller-reducer";
-import DisplayGame from "./DisplayGame";
+import SayNumber from "./SayNumber";
 
 let mapStateToProps:any = (state:StateType) => ({
     controller: state.controller
@@ -12,12 +12,12 @@ const connector = connect(mapStateToProps, {setCurrentLevel, setCurrentNumber});
 
 export type PropsStateType = ConnectedProps<typeof connector> ;
 
-class DisplayGameContainer extends React.Component<PropsStateType> {
+class SayNumberContainer extends React.Component<PropsStateType> {
     render() {
         return (
-            <DisplayGame {...this.props } />
+            <SayNumber {...this.props } />
         );
     }
 }
 
-export default connect(mapStateToProps, {setCurrentLevel, setCurrentNumber})(DisplayGameContainer);
+export default connect(mapStateToProps, {setCurrentLevel, setCurrentNumber})(SayNumberContainer);
