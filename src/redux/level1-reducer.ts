@@ -30,9 +30,6 @@ export const setDeltaPositionAndVisibility = (id:number, deltaPosition:deltaPosi
     {type:SET_DELTA_POSITION_AND_VISIBILITY, id, deltaPosition, idNumber}
 );
 
-
-type ActionTypes = ReturnType<typeof setVisibilityItem>;
-
 let initialState = {
     numbers: [
         {

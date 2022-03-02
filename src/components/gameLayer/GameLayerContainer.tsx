@@ -8,19 +8,19 @@ type OwnProps = {
     idNumber:number;
 }
 
-let mapStateToProps:any = (state:StateType, ownProps:OwnProps) => ({
+let mapStateToProps = (state:StateType, ownProps:OwnProps) => ({
     state: state,
     idNumber: ownProps.idNumber
 });
 
 const connector = connect(mapStateToProps, {setDeltaPosition, setVisibilityItem, setDeltaPositionAndVisibility});
-export type PropsStateType = ConnectedProps<typeof connector>  & ReturnType<typeof mapStateToProps>;;
+export type PropsStateNumberType = ConnectedProps<typeof connector>;
 
 // class GameLayerContainer extends React.Component<StateType> {
 //  render() { return (<GameLayer {...this.props} />); }
 // }
 
-const GameLayerContainer: React.FC<PropsStateType> = (props:PropsStateType) => {
+const GameLayerContainer: React.FC<PropsStateNumberType> = (props:PropsStateNumberType) => {
     return (
         <GameLayer {...props } />
     );

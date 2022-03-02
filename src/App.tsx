@@ -2,7 +2,6 @@ import React from 'react';
 import "./App.css";
 import SelectNumber from './components/SelectNumber/SelectNumber';
 import {Route, Routes, NavLink} from "react-router-dom";
-import SayNumber from './components/SayNumber/SayNumber';
 import MainDisplay from './components/MainDisplay/MainDisplay';
 import DisplayGameContainer from './components/DisplayGame/DisplayGameContainer';
 
@@ -19,8 +18,7 @@ class App extends React.Component {
             <Route path="" element={<SelectNumber />} />
             <Route path="number" element={<DisplayGameContainer />} >
               <Route path=":numberId" element={<DisplayGameContainer />} />
-            </Route>  
-            <Route path="number4" element={<SayNumber />} />
+            </Route>              
             <Route
               path="*"
               element={

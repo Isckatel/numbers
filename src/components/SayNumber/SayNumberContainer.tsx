@@ -4,15 +4,15 @@ import {connect, ConnectedProps} from 'react-redux';
 import {setCurrentLevel, setCurrentNumber} from "../../redux/controller-reducer";
 import SayNumber from "./SayNumber";
 
-let mapStateToProps:any = (state:StateType) => ({
+let mapStateToProps = (state:StateType) => ({
     controller: state.controller
 });
 
 const connector = connect(mapStateToProps, {setCurrentLevel, setCurrentNumber});
 
-export type PropsStateType = ConnectedProps<typeof connector> ;
+export type PropsControllerType = ConnectedProps<typeof connector> ;
 
-class SayNumberContainer extends React.Component<PropsStateType> {
+class SayNumberContainer extends React.Component<PropsControllerType> {
     render() {
         return (
             <SayNumber {...this.props } />

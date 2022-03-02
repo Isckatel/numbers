@@ -17,7 +17,6 @@ let mapStateToProps = (state:StateType, ownProps: OwnProps) => ({
 
 const connector = connect(mapStateToProps, {setDeltaPositionAndVisibility});
 export type PropsStateType = ConnectedProps<typeof connector>;
-// export type PropsStateType = ConnectProps & OwnProps;
 // export type PropsStateType = ReturnType<typeof connector>;
 
 class ItemContainer extends React.Component<PropsStateType> {

@@ -1,8 +1,8 @@
 import React from 'react';
 import "./SayNumber.css";
+import {PropsControllerType} from "./SayNumberContainer";
 
-class SayNumber extends React.Component<any> {
-    // aud = new Audio();
+class SayNumber extends React.Component<PropsControllerType> {
     str = 'odin.mp3';    
     aud = new Audio('../../assets/mp3/odin.mp3');
     componentDidMount(): void {

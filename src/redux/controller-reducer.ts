@@ -9,8 +9,6 @@ export const setCurrentNumber = (number:number) => (
     {type:SET_CURRENT_NUMBER, number}
 );
 
-type ActionTypes = ReturnType<typeof setCurrentLevel>;
-
 let initialState = {
     currentLevel: 0,
     currentNumber: 1

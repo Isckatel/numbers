@@ -3,17 +3,6 @@ import Draggable, {DraggableEventHandler} from 'react-draggable';
 import "./item.css";
 import { PropsStateType } from './itemContainer';
 
-// interface IPosition {
-//     positionX:number,
-//     positionY:number,
-//     widthObj:number,
-//     heightObj: number
-// }
-
-// interface IItem {
-//   id: number,  
-// }
-
 class Item extends React.Component<PropsStateType> {
     
     handleDrag: DraggableEventHandler = (e, ui) => {

@@ -3,9 +3,10 @@ import GameLayerContainer from '../gameLayer/GameLayerContainer';
 import { useParams } from "react-router-dom";
 import "./DisplayGame.css";
 import SayNumberContainer from '../SayNumber/SayNumberContainer';
+import {PropsControllerType} from "./DisplayGameContainer";
 
-const DisplayGame: React.FC<any> = (props:any) => { 
-    let params = useParams();
+const DisplayGame: React.FC<PropsControllerType> = (props:PropsControllerType) => { 
+    let params = useParams();//для получения цифры пришедшей от Route
     const [init, setInit] = useState(false);  
     useEffect(() => {
         if (!init) {
@@ -15,6 +16,7 @@ const DisplayGame: React.FC<any> = (props:any) => {
         }
     });
     let currentElement;
+    //Выбор уровня игры, каждыу уровень - компонент
     switch (props.controller.currentLevel) {
         case 1:
             currentElement = () => { return (<SayNumberContainer />);}
@@ -23,14 +25,13 @@ const DisplayGame: React.FC<any> = (props:any) => {
             currentElement = () => { return (<GameLayerContainer idNumber={Number(params.numberId)} />);}
             break;
         default:
-            currentElement = () => { return (<GameLayerContainer idNumber={Number(params.numberId)} />);}
+            currentElement = () => { return (<SayNumberContainer />);}
     }        
 
     return(
         <div className="WraperDisplayGame">
             <div className="DisplayGame">
                 {currentElement()}
-                {/* <GameLayerContainer idNumber={Number(params.numberId)} /> */}
             </div>
         </div>
     );   

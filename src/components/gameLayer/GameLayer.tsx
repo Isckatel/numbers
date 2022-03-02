@@ -1,11 +1,9 @@
 import React from 'react';
 import ItemContainer from '../item/itemContainer';
 import "./GameLayer.css";
-import DisplayGame from "../DisplayGame/DisplayGame";
-import { timeStamp } from 'console';
-import {PropsStateType} from "./GameLayerContainer";
+import {PropsStateNumberType} from "./GameLayerContainer";
 
-class GameLayer extends React.Component<PropsStateType> {
+class GameLayer extends React.Component<PropsStateNumberType> {
   elementRef; 
   constructor(props) {
     super(props);
