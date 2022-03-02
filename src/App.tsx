@@ -20,6 +20,7 @@ class App extends React.Component {
             <Route path="number" element={<DisplayGameContainer />} >
               <Route path=":numberId" element={<DisplayGameContainer />} />
             </Route>  
+            <Route path="number4" element={<SayNumber />} />
             <Route
               path="*"
               element={
