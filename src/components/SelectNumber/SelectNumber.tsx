@@ -6,16 +6,16 @@ class SelectNumber extends React.Component {
     render() {
         return (
             <div className="selsectNumber">
-                <NavLink to="/number/1"> <div className="elemSelect">1</div></NavLink>
-                <NavLink to="/number/2"> <div className="elemSelect">2</div></NavLink>
-                <NavLink to="/number/3"> <div className="elemSelect">3</div></NavLink>
-                <NavLink to="/number4"> <div className="elemSelect">4</div></NavLink>
-                <NavLink to="/number5"> <div className="elemSelect">5</div></NavLink>
-                <NavLink to="/number6"> <div className="elemSelect">6</div></NavLink>
-                <NavLink to="/number7"> <div className="elemSelect">7</div></NavLink>
-                <NavLink to="/number8"> <div className="elemSelect">8</div></NavLink>
-                <NavLink to="/number9"> <div className="elemSelect">9</div></NavLink>
-                <NavLink to="/number10"><div className="elemSelect">10</div></NavLink>                
+                <NavLink className="selectNumber" to="/number/1"> <div className="elemSelect"><span className='number'>1</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number/2"> <div className="elemSelect"><span className='number'>2</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number/3"> <div className="elemSelect"><span className='number'>3</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number4"> <div className="elemSelect"><span className='number'>4</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number5"> <div className="elemSelect"><span className='number'>5</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number6"> <div className="elemSelect"><span className='number'>6</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number7"> <div className="elemSelect"><span className='number'>7</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number8"> <div className="elemSelect"><span className='number'>8</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number9"> <div className="elemSelect"><span className='number'>9</span></div></NavLink>
+                <NavLink className="selectNumber" to="/number10"><div className="elemSelect"><span className='number'>10</span></div></NavLink>                
             </div>
             
         );

@@ -1,6 +1,15 @@
 .App-header {
   background-color: skyblue;
   height: 40px;
+  padding-left: 20px;
+  padding-top: 15px;
+  background: linear-gradient(0deg, skyblue, #C5DDE8);
+}
+
+.mainMenu {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
 }
 
 .App-link {

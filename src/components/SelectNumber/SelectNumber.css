@@ -5,6 +5,7 @@
 }
 
 .elemSelect {
+    display: flex;
     flex-grow: 1;
     flex-basis: 25%;
     height: 100px;
@@ -12,9 +13,21 @@
     max-width: 266px;  
     margin-right: 10px;
     margin-left: 10px;
-    border: 2px solid rgba(9, 185, 82, 0.527);
+    background: skyblue;
     text-align: center;
     font-size: 32px;
-    color: cadetblue;
-    text-decoration: none;
+    font-weight: bold;
+    color: rgb(4, 77, 172);
+    margin-top: 10px;
+    border-radius: 5%;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.number {
+    margin: auto;
+    display: block;   
+}
+
+.selectNumber {
+    text-decoration: none;    
 }
