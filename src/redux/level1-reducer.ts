@@ -19,7 +19,6 @@ export type personType = {
     height: number   
 }
 
-//export type StateType = ReturnType<typeof store.getState>;
 export const setVisibilityItem = (id:number, idNumber:number) => (
     {type:SET_VISIBILITY_ITEM, id, idNumber}
 );
@@ -122,26 +121,6 @@ let initialState = {
 
 const level1Reducer = (state = initialState, action: any) => {
     switch (action.type) {
-        // case SET_VISIBILITY_ITEM:
-        //     return {
-        //         ...state,
-        //         //переделать
-        //         items: state.numbers[action.idNumber-1].items.map((item:any) => {
-        //             if (item.id==action.id) {return {...item, visibility: false}} 
-        //             else {return {...item}}
-        //         })
-        //     }
-        // case SET_DELTA_POSITION:
-        //     return {
-        //         ...state,
-        //         items: state.numbers[action.idNumber-1].items.map((item:any) => {
-        //             if (item.id==action.id) {
-        //                 return {...item, deltaPosition:{x:action.deltaPosition.x, y:action.deltaPosition.y}}
-        //             } else {
-        //                 return {...item}
-        //             }
-        //         })
-        //     }
         case SET_DELTA_POSITION_AND_VISIBILITY:
             return {
                 ...state,
