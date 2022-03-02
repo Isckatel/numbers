@@ -6,7 +6,7 @@ export const setCurrentLevel = (level:number) => (
 );
 
 export const setCurrentNumber = (number:number) => (
-    {type:SET_CURRENT_LEVEL, number}
+    {type:SET_CURRENT_NUMBER, number}
 );
 
 type ActionTypes = ReturnType<typeof setCurrentLevel>;
