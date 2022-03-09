@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "./DisplayGame.css";
 import SayNumberContainer from '../SayNumber/SayNumberContainer';
 import {PropsControllerType} from "./DisplayGameContainer";
+import FindNumberContainer from '../FindNumber/FindNumberContainer';
 
 const DisplayGame: React.FC<PropsControllerType> = (props:PropsControllerType) => { 
     let params = useParams();//для получения цифры пришедшей от Route
@@ -23,6 +24,9 @@ const DisplayGame: React.FC<PropsControllerType> = (props:PropsControllerType) =
             break;
         case 2:
             currentElement = () => { return (<GameLayerContainer idNumber={Number(params.numberId)} />);}
+            break;
+        case 3:
+            currentElement = () => { return (<FindNumberContainer idNumber={Number(params.numberId)} />);}
             break;
         default:
             currentElement = () => { return (<SayNumberContainer />);}

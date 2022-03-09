@@ -12,9 +12,14 @@ class GameLayer extends React.Component<PropsStateNumberType> {
     
   render() { 
     let itemElem = this.props.state.level1.numbers[this.props.idNumber-1].items.map((it)=>{
+      let count = 0;       
       if (it.visibility) {
         return (<ItemContainer key={it.id} idItem={it.id} idNumber={this.props.idNumber} />)
       } else {
+        count++;
+        if (count == this.props.state.level1.numbers[this.props.idNumber-1].items.length) {
+          this.props.setCurrentLevel(3);
+        }
         return null;
       }  
     });

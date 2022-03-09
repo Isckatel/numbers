@@ -4,6 +4,7 @@ import SelectNumber from './components/SelectNumber/SelectNumber';
 import {Route, Routes, NavLink} from "react-router-dom";
 import MainDisplay from './components/MainDisplay/MainDisplay';
 import DisplayGameContainer from './components/DisplayGame/DisplayGameContainer';
+import FindNumberContainer from './components/FindNumber/FindNumberContainer';
 
 class App extends React.Component {  
   render(){    
@@ -18,7 +19,7 @@ class App extends React.Component {
             <Route path="" element={<SelectNumber />} />
             <Route path="number" element={<DisplayGameContainer />} >
               <Route path=":numberId" element={<DisplayGameContainer />} />
-            </Route>              
+            </Route>                         
             <Route
               path="*"
               element={
